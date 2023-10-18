@@ -1,3 +1,8 @@
 export default function Home() {
-  return <h1>Olá sou uma página nova!</h1>;
+  return (
+    <div>
+      <h1>Em construção</h1>
+      <p>Página para postagem de comentários pessoais.</p>
+    </div>
+  );
 }
