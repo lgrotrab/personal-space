@@ -8,5 +8,6 @@ db.createUser({
   pwd: process.env.MONGO_INITDB_ROOT_PASSWORD,
   roles: [{ role: "readWrite", db: process.env.MONGO_INITDB_DATABASE }],
 });
+db.createCollection("users");
 
 print("end ~~~~");

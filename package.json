@@ -2,8 +2,10 @@
   "name": "personal-space",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
+    "seed": "node -r dotenv/config ./infra/database-mock-data.js dotenv_config_path=./.env.local",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,7 +23,9 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.2.0",
     "autoprefixer": "^10",
+    "dotenv": "^16.3.1",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "eslint-config-prettier": "^9.0.0",
