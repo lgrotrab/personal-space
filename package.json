@@ -11,8 +11,8 @@
     "lint": "next lint",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
-    "test": "jest",
-    "test:watch": "jest --watchAll",
+    "test": "node --experimental-vm-modules ./node_modules/.bin/jest",
+    "test:watch": "node --experimental-vm-modules ./node_modules/.bin/jest --watchAll",
     "container": "docker compose -f ./infra/compose.yaml --env-file ./.env.local up -d ",
     "stop:container": "docker compose -f ./infra/compose.yaml --env-file ./.env.local down "
   },
