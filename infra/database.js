@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 class Database {
   constructor() {
@@ -7,7 +7,6 @@ class Database {
 
   static connect() {
     const uri = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/${process.env.MONGO_INITDB_DATABASE}`;
-    console.log(uri);
     mongoose
       .connect(uri, {
         useNewUrlParser: true,
@@ -19,6 +18,10 @@ class Database {
         console.error("Database connection error");
       });
   }
+
+  static close() {
+    mongoose.connection.close();
+  }
 }
 
-module.exports = Database;
+export default Database;

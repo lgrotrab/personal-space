@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Database = require("../../../infra/database.js");
+import mongoose from "mongoose";
+import Database from "../../../infra/database.js";
 
 describe("Database Connection", () => {
   test("connect method should establish a connection", async () => {
@@ -12,6 +12,6 @@ describe("Database Connection", () => {
 
     expect(mongoose.connection.readyState).toBe(1);
 
-    await mongoose.disconnect();
+    await Database.close();
   });
 });
